@@ -1,14 +1,16 @@
 /**
- *  Diese Datei beschreibt die Main-Funktionalität.
+ *  Diese Datei beschreibt die Main-Funktionalitï¿½t.
  *
  *  @author Jesse Kroeske, Timo Thiede - 07.04.2021
  **/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "hangman.h"
+
 
 int main()
 {
-    printf("Hello world!\n");
+    test();
     return 0;
 }

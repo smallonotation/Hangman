@@ -1,7 +1,11 @@
 /**
- *  Diese Quell-Datei dient zur Definition der Spielfunktionalität.
+ *  Diese Quell-Datei dient zur Definition der Spielfunktionalitï¿½t.
  *
  *  @author Jesse Kroeske, Timo Thiede - 07.04.2021
  **/
 
 #include "hangman.h"
+
+void test(){
+    printf("Hello world!\n");
+}

@@ -1,5 +1,5 @@
 /**
- *  Diese Header-Datei dient zur Deklaration der Spielfunktionalität.
+ *  Diese Header-Datei dient zur Deklaration der Spielfunktionalitï¿½t.
  *
  *  @author Jesse Kroeske, Timo Thiede - 07.04.2021
  **/
@@ -7,5 +7,6 @@
 #ifndef HANGMAN_H
 #define HANGMAN_H
 
+void test();
 
 #endif // HANGMAN_H
