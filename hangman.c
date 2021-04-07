@@ -7,5 +7,5 @@
 #include "hangman.h"
 
 void test(){
-    printf("Hello world!\n");
+    printf("Hello world!!\n");
 }
