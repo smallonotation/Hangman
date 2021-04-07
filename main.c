@@ -10,6 +10,6 @@
 
 int main()
 {
-    test();
+    test(); // Ruft die Testfunktion auf.
     return 0;
 }
