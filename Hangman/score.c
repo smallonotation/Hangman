@@ -39,11 +39,8 @@ time_t get_stopwatchtime() {
 /// <summary>
 /// Gibt die Anzahl der Tipps zurück.
 /// </summary>
-/// <param name="inclwrong">Inklusive falsche Tipps</param>
-/// <returns>Anzahl der Tipps.</returns>
-int get_guesses(bool inclwrong) {
-	if (inclwrong)
-		return gamescore.guesses - gamescore.wrong_guesses;
+/// <returns>Tippelement.</returns>
+struct guesses get_guesses() {
 	return gamescore.guesses;
 }
 
@@ -52,9 +49,10 @@ int get_guesses(bool inclwrong) {
 /// </summary>
 /// <param name="correct">Tipp korrekt?</param>
 void add_guess(bool correct) {
-	gamescore.guesses++;
-	if (!correct)
-		gamescore.wrong_guesses++;
+	if (correct)
+		gamescore.guesses.correct_guesses++;
+	else
+		gamescore.guesses.wrong_guesses++;
 }
 
 /// <summary>

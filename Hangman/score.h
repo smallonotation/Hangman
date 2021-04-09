@@ -11,10 +11,14 @@
 #include <stdio.h>
 #include <time.h>
 
+struct guesses {
+	int wrong_guesses;
+	int correct_guesses;
+};
+
 struct score {
 	time_t stopwatch_time;
-	int guesses;
-	int wrong_guesses;
+	struct guesses guesses;
 };
 
 extern struct score gamescore;
@@ -47,7 +51,7 @@ void add_guess(bool correct);
 /// </summary>
 /// <param name="inclwrong">Inklusive falsche Tipps</param>
 /// <returns>Anzahl der Tipps.</returns>
-int get_guesses(bool inclwrong);
+struct guesses get_guesses();
 
 /// <summary>
 /// Gibt ein Score-Objekt zurück.

@@ -8,6 +8,7 @@
 #include "hangman.h"
 #include "score.h"
 
+void test_score();
 
 int main()
 {
@@ -56,5 +57,7 @@ void test_score() {
 
     printf("approx 2 sec\n");
 
-    printf("guesses: %i, wrong guesses: %i, time: %llu", get_score().guesses, get_score().wrong_guesses, get_stopwatchtime());
+    struct score score = get_score();
+
+    printf("guesses: %i, wrong guesses: %i, time: %llu", score.guesses.correct_guesses + score.guesses.wrong_guesses, score.guesses.wrong_guesses, get_stopwatchtime());
 }
