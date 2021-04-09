@@ -12,7 +12,7 @@
 #include <time.h>
 
 struct score {
-	time_t time;
+	time_t stopwatch_time;
 	int guesses;
 	int wrong_guesses;
 };
@@ -21,20 +21,20 @@ extern struct score gamescore;
 extern time_t start_time;
 
 /// <summary>
-/// Startet den Timer.
+/// Startet die Stopwatch.
 /// </summary>
-void start_timer();
+void start_stopwatch();
 
 /// <summary>
-/// Stoppt den Timer.
+/// Stoppt die Stopwatch.
 /// </summary>
-void stop_timer();
+void stop_stopwatch();
 
 /// <summary>
-/// Gibt die Zeit des Timers zurück in Sekunden.
+/// Gibt die Zeit des Stopwatches zurück in Sekunden.
 /// </summary>
 /// <returns>Die Zeit oder 0 wenn der Timer nicht gestartet wurde.</returns>
-time_t get_time();
+time_t get_stopwatchtime();
 
 /// <summary>
 /// Fügt einen Tipp hinzu.

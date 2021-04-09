@@ -23,7 +23,7 @@ void test_score() {
     printf("Starte Score...\n");
     printf("Starte Timer\n");
 
-    start_timer();
+    start_stopwatch();
 
     printf("Delay...\n");
 
@@ -41,7 +41,7 @@ void test_score() {
     add_guess(false);
     add_guess(false);
 
-    printf("current time: %llu\n", get_time());
+    printf("current time: %llu\n", get_stopwatchtime());
 
     printf("Delay...\n");
 
@@ -52,9 +52,9 @@ void test_score() {
 
     printf("Stop Timer\n");
 
-    stop_timer();
+    stop_stopwatch();
 
     printf("approx 2 sec\n");
 
-    printf("guesses: %i, wrong guesses: %i, time: %llu", get_score().guesses, get_score().wrong_guesses, get_time());
+    printf("guesses: %i, wrong guesses: %i, time: %llu", get_score().guesses, get_score().wrong_guesses, get_stopwatchtime());
 }

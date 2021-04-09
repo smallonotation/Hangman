@@ -10,30 +10,30 @@ struct score gamescore;
 time_t start_time = 0;
 
 /// <summary>
-/// Startet den Timer.
+/// Startet die Stopwatch.
 /// </summary>
-void start_timer() {
+void start_stopwatch() {
 	start_time = time(NULL);
-	gamescore.time = 0;
+	gamescore.stopwatch_time = 0;
 }
 
 /// <summary>
-/// Stoppt den Timer.
+/// Stoppt die Stopwatch.
 /// </summary>
-void stop_timer(){
-	gamescore.time = time(NULL) - start_time;
+void stop_stopwatch(){
+	gamescore.stopwatch_time = time(NULL) - start_time;
 }
 
 /// <summary>
-/// Gibt die Zeit des Timers zurück in Sekunden.
+/// Gibt die Zeit des Stopwatches zurück in Sekunden.
 /// </summary>
 /// <returns>Die Zeit oder 0 wenn der Timer nicht gestartet wurde.</returns>
-time_t get_time() {
+time_t get_stopwatchtime() {
 	if (start_time == 0)
 		return 0;
-	if(gamescore.time == 0)
+	if(gamescore.stopwatch_time == 0)
 		return time(NULL) - start_time;
-	return gamescore.time;
+	return gamescore.stopwatch_time;
 }
 
 /// <summary>
