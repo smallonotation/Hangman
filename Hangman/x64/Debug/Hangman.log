@@ -1,9 +1,4 @@
-﻿  data_io.c
-  file_io.c
-  graphics.c
-  hangman.c
-  main.c
+﻿  main.c
   score.c
-  security.c
   Code wird generiert...
-  Hangman.vcxproj -> C:\Users\Jesse\source\repos\Hangman\x64\Debug\Hangman.exe
+  Hangman.vcxproj -> C:\Users\jkroeske\Documents\GitHub\Hangman\x64\Debug\Hangman.exe
