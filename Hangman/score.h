@@ -49,8 +49,7 @@ void add_guess(bool correct);
 /// <summary>
 /// Gibt die Anzahl der Tipps zurück.
 /// </summary>
-/// <param name="inclwrong">Inklusive falsche Tipps</param>
-/// <returns>Anzahl der Tipps.</returns>
+/// <returns>Tippelement.</returns>
 struct guesses get_guesses();
 
 /// <summary>

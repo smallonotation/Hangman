@@ -12,8 +12,8 @@ void test_score();
 
 int main()
 {
+    //game_start();
     test_score();
-
     return 0;
 }
 
