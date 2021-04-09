@@ -20,13 +20,38 @@ struct score {
 extern struct score gamescore;
 extern time_t start_time;
 
+/// <summary>
+/// Startet den Timer.
+/// </summary>
 void start_timer();
+
+/// <summary>
+/// Stoppt den Timer.
+/// </summary>
 void stop_timer();
+
+/// <summary>
+/// Gibt die Zeit des Timers zurück in Sekunden.
+/// </summary>
+/// <returns>Die Zeit oder 0 wenn der Timer nicht gestartet wurde.</returns>
 time_t get_time();
 
+/// <summary>
+/// Fügt einen Tipp hinzu.
+/// </summary>
+/// <param name="correct">Tipp korrekt?</param>
 void add_guess(bool correct);
+
+/// <summary>
+/// Gibt die Anzahl der Tipps zurück.
+/// </summary>
+/// <param name="inclwrong">Inklusive falsche Tipps</param>
+/// <returns>Anzahl der Tipps.</returns>
 int get_guesses(bool inclwrong);
 
+/// <summary>
+/// Gibt ein Score-Objekt zurück.
+/// </summary>
 struct score get_score();
 
 #endif // SCORE_H
