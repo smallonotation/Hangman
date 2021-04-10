@@ -7,13 +7,16 @@
 #include <stdlib.h>
 #include "hangman.h"
 #include "score.h"
+#include "security.h"
 
 void test_score();
+void test_encrypt_decrypt();
 
 int main()
 {
     //game_start();
-    test_score();
+    //test_score();
+    test_encrypt_decrypt();
     return 0;
 }
 
@@ -60,4 +63,13 @@ void test_score() {
     struct score score = get_score();
 
     printf("guesses: %i, wrong guesses: %i, time: %llu", score.guesses.correct_guesses + score.guesses.wrong_guesses, score.guesses.wrong_guesses, get_stopwatchtime());
+}
+
+void test_encrypt_decrypt() {
+    char text[] = "Dies ist ein test\n";
+    printf(text);
+    encrypt(text);
+    printf(text);
+    decrypt(text);
+    printf(text);
 }
