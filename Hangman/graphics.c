@@ -64,18 +64,20 @@ int draw_border(int width, int height)
 }
 
 /*
+10 x 10 - Feld
 +----------+
-| ======== |
-|  |     | |
-|  |     | |
-|  O     | |
-| /|\    | |
-|  |     | |
-| / \    | |
-|        | |
-|        | |
-|==========|
+| ======== | 1
+|  |     | | 2
+|  |     | | 3
+|  O     | | 4
+| /|\    | | 5
+|  |     | | 6
+| / \    | | 7
+|        | | 8
+|        | | 9
+|==========| 10
 +----------+
+ 12345678910
 */
 void draw_hangman(/*int xPos, int yPos,*/ int errorCount)
 {
@@ -83,55 +85,58 @@ void draw_hangman(/*int xPos, int yPos,*/ int errorCount)
 	{
 	case 0:
 	{
-		printf("");
+		printf("          \n          \n          \n          \n          \n          \n          \n          \n          \n          ");
+		break;
 	}
 	case 1:
 	{
-
+		printf("          \n          \n          \n          \n          \n          \n          \n          \n          \n==========");
+		break;
 	}
 	case 2:
 	{
-
+		printf("          \n        | \n        | \n        | \n        | \n        | \n        | \n        | \n        | \n==========");
+		break;
 	}
 	case 3:
 	{
-
+		break;
 	}
 	case 4:
 	{
-
+		break;
 	}
 	case 5:
 	{
-
+		break;
 	}
 	case 6:
 	{
-
+		break;
 	}
 	case 7:
 	{
-
+		break;
 	}
 	case 8:
 	{
-
+		break;
 	}
 	case 9:
 	{
-
+		break;
 	}
 	case 10:
 	{
-
+		break;
 	}
 	case 11:
 	{
-
+		break;
 	}
 	default:
 	{
-
+		break;
 	}
 	}
 }
