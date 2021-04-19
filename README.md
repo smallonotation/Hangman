@@ -1,7 +1,7 @@
 # Hangman
 [TBD] = To be decided (Unklar, kann eingefügt werden oder auch nicht)
 
-## graphics.c
+## graphics.c - Author: Nico Nowak
 ### change_codepage() - Experimental
 Ändert die Codepage um die Ascii-Zeichen für die Rahmen nutzen zu können.
 ### clear_console()
