@@ -85,6 +85,7 @@ void draw_hangman(int xPos, int yPos, int errorCount)
 	}
 }
 
+/*
 struct MousePosition get_mouse_position()
 {
 	struct MousePosition position;
@@ -94,3 +95,4 @@ struct MousePosition get_mouse_position()
 
 	return position;
 }
+*/
