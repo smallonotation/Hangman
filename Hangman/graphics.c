@@ -84,3 +84,13 @@ void draw_hangman(int xPos, int yPos, int errorCount)
 	default: // > 11
 	}
 }
+
+struct MousePosition get_mouse_position()
+{
+	struct MousePosition position;
+
+	position.cursorX = wherex();
+	position.cursorY = wherey();
+
+	return position;
+}

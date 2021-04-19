@@ -10,9 +10,7 @@
 /// <summary>
 ///		Struktur für die Cursorposition.
 /// </summary>
-struct MousePosition;
-
-typedef struct MousePosition
+struct MousePosition
 {
 	int cursorX;
 	int cursorY;
@@ -42,5 +40,10 @@ int draw_border(int width, int height);
 ///		errorCount = Die Anzahl der Fehler (Wenn die Fehlerzahl über 11 steigt ist das Spiel verloren).
 /// </summary>
 void draw_hangman(int xPos, int yPos, int errorCount);
+
+/// <summary>
+///		Speichert die aktuelle Mausposition.
+/// </summary>
+struct MousePosition get_mouse_position();
 
 #endif // GRAPHICS_H
