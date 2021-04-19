@@ -62,7 +62,7 @@ int draw_border(int width, int height)
 	return 0;
 }
 
-void draw_hangman(int xPos, int yPos, int errorCount)
+void draw_hangman(/*int xPos, int yPos,*/ int errorCount)
 {
 	switch (errorCount)
 	{
