@@ -41,9 +41,4 @@ int draw_border(int width, int height);
 /// </summary>
 void draw_hangman(/*int xPos, int yPos,*/ int errorCount);
 
-/// <summary>
-///		Speichert die aktuelle Mausposition.
-/// </summary>
-//struct MousePosition get_mouse_position();
-
 #endif // GRAPHICS_H

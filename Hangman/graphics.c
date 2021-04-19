@@ -63,13 +63,27 @@ int draw_border(int width, int height)
 	return 0;
 }
 
+/*
++----------+
+| ======== |
+|  |     | |
+|  |     | |
+|  O     | |
+| /|\    | |
+|  |     | |
+| / \    | |
+|        | |
+|        | |
+|==========|
++----------+
+*/
 void draw_hangman(/*int xPos, int yPos,*/ int errorCount)
 {
 	switch (errorCount)
 	{
 	case 0:
 	{
-
+		printf("");
 	}
 	case 1:
 	{
@@ -121,15 +135,3 @@ void draw_hangman(/*int xPos, int yPos,*/ int errorCount)
 	}
 	}
 }
-
-/*
-struct MousePosition get_mouse_position()
-{
-	struct MousePosition position;
-
-	position.cursorX = wherex();
-	position.cursorY = wherey();
-
-	return position;
-}
-*/
