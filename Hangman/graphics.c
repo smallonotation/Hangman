@@ -21,37 +21,33 @@ void clear_console()
 
 int draw_border(int width, int height)
 {
-	// Zählervariablen
-	int y, x;
+	int i, j;
 
-	// Rahmen erzeugen.
-	// Y-Achse
-	for (y = 0; y < height; y++)
+	for (i = 0; i < height; i++)
 	{
-		// X-Achse auf der Höhe Y
-		for (x = 0; x < width; x++)
+		for (j = 0; j < width; j++)
 		{
-			if (y == 0 && x == 0)
+			if (i == 0 && j == 0)
 			{
 				printf("\xC9");
 			}
-			else if (y == 0 && x == width - 1)
+			else if (i == 0 && j == width - 1)
 			{
 				printf("\xBB");
 			}
-			else if (y == height - 1 && x == 0)
+			else if (i == height - 1 && j == 0)
 			{
 				printf("\xC8");
 			}
-			else if (y == height - 1 && x == width - 1)
+			else if (i == height - 1 && j == width - 1)
 			{
 				printf("\xBC");
 			}
-			else if (y == 0 || y == height)
+			else if (i == 0 || i == height - 1)
 			{
 				printf("\xCD");
 			}
-			else if (x == 0 || x == width - 1)
+			else if (j == 0 || j == width - 1)
 			{
 				printf("\xBA");
 			}
@@ -60,6 +56,7 @@ int draw_border(int width, int height)
 				printf(" ");
 			}
 		}
+		printf("\n");
 	}
 
 	return 0;
