@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1619116326 source:c:\users\jesse\documents\github\hangman\main.c
+	<stdlib.h>
+	"hangman.h"
+	"score.h"
+	"security.h"
+	"data_io.h"
+
+1619116326 c:\users\jesse\documents\github\hangman\hangman.h
+	<stdbool.h>
+	"score.h"
+	"data_io.h"
+
+1619116326 c:\users\jesse\documents\github\hangman\score.h
+	<stdbool.h>
+	<stdio.h>
+	<time.h>
+
+1619116326 c:\users\jesse\documents\github\hangman\data_io.h
+
+1619116326 c:\users\jesse\documents\github\hangman\security.h
+	<stdio.h>
+	<string.h>
+
+1619116326 source:c:\users\jesse\documents\github\hangman\data_io.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"data_io.h"
+
+1619116326 source:c:\users\jesse\documents\github\hangman\file_io.c
+	"file_io.h"
+
+1619116326 c:\users\jesse\documents\github\hangman\file_io.h
+
+1619116326 source:c:\users\jesse\documents\github\hangman\graphics.c
+	<windows.h>
+	<stdio.h>
+	"graphics.h"
+
+1619116326 c:\users\jesse\documents\github\hangman\graphics.h
+
+1619116326 source:c:\users\jesse\documents\github\hangman\hangman.c
+	"hangman.h"
+
+1619116326 source:c:\users\jesse\documents\github\hangman\score.c
+	"score.h"
+
+1619116326 source:c:\users\jesse\documents\github\hangman\security.c
+	"security.h"
+
