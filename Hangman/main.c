@@ -1,23 +1,37 @@
 /**
  *  Diese Datei beschreibt die Main-Funktionalit�t.
  *
- *  @author Jesse Kroeske, Timo Thiede - 07.04.2021
+ *  @author Jesse Kroeske, Nico Nowak, Timo Thiede - 19.04.2021
  **/
 
 #include <stdlib.h>
 #include "hangman.h"
 #include "score.h"
 #include "security.h"
+#include "data_io.h"
 
 void test_score();
 void test_encrypt_decrypt();
+void test_dataio();
 
 int main()
 {
     //game_start();
     //test_score();
-    test_encrypt_decrypt();
+    //test_encrypt_decrypt();
+    test_dataio();
     return 0;
+}
+
+void test_dataio()
+{
+    inputSolutionWord("Moin");
+    inputEnteredChar('ZM');
+    inputEnteredChar('A');
+    inputEnteredChar('O');
+    inputEnteredChar('U');
+    outputDiscoveredLetters();
+    outputEnteredChars();
 }
 
 void test_score() {

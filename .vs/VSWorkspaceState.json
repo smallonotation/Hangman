@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Hangman"
   ],
-  "SelectedNode": "\\main.c",
+  "SelectedNode": "\\Hangman\\data_io.c",
   "PreviewInSolutionExplorer": false
 }
