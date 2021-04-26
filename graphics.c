@@ -144,3 +144,21 @@ void drawHangman(/*int xPos, int yPos,*/ int errorCount)
 	}
 	}
 }
+
+int setCursorPosition(int xCoord, int yCoord)
+{
+    COORD coord;
+    coord.X = xCoord;
+    coord.Y = yCoord;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+    return 0;
+}
+
+int resetCursorPosition()
+{
+    COORD coord;
+    coord.X = 0;
+    coord.Y = 1;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+    return 0;
+}

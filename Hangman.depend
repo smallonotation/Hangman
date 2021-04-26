@@ -57,12 +57,12 @@
 
 1619416475 e:\godot\hangmannew\data_io.h
 
-1619418746 source:e:\godot\hangmannew\graphics.c
+1619429513 source:e:\godot\hangmannew\graphics.c
 	<windows.h>
 	<stdio.h>
 	"graphics.h"
 
-1619416475 e:\godot\hangmannew\graphics.h
+1619429738 e:\godot\hangmannew\graphics.h
 
 1619416475 source:e:\godot\hangmannew\hangman.c
 	"hangman.h"
@@ -77,7 +77,7 @@
 	<stdio.h>
 	<time.h>
 
-1619428514 source:e:\godot\hangmannew\main.c
+1619429467 source:e:\godot\hangmannew\main.c
 	<stdlib.h>
 	"hangman.h"
 	"score.h"

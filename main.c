@@ -9,6 +9,7 @@
 #include "score.h"
 #include "security.h"
 #include "data_io.h"
+#include "graphics.h"
 
 void test_score();
 void test_encrypt_decrypt();
@@ -31,6 +32,9 @@ int main()
     // Identifiziert, ob die Schleife wiederholt wird.
     bool isGameLoopActive = true;
 
+    // Test
+    int i = 0;
+
     // Game-Loop, isGameLoopActive wird auf false gesetzt,
     // wenn im Menü das Spiel beendet wird.
     do
@@ -42,12 +46,27 @@ int main()
         /*
             Game Code
         */
-    }while(isGameLoopActive)
+
+        // Test
+        isGameLoopActive = false;
+        scanf("%i", &i);
+    }while(isGameLoopActive);
 
     /*
         Game Close Code
-        z.B. Auf Wiedersehen! o/
     */
+    // Alle Charaktere der Konsole löschen und End-Bildschirm bauen.
+    clearConsole();
+
+    // Erstellt einen Rahmen.
+    drawBorder(24,3);
+
+    // Setzt den Cursor in den Rahmen.
+    setCursorPosition(2,1);
+    printf("Auf Wiedersehen! o/");
+
+    // Setzt den Cursor tiefer, um die Nachricht "Process returned 0x0..." nicht zu clippen.
+    setCursorPosition(0,5);
 
     return 0;
 }
