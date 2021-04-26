@@ -21,6 +21,33 @@ int main()
     //test_encrypt_decrypt();
     test_dataio();
 
+    /*
+        Main-Funktion von Hangman
+        Hier wird das Spiel gespielt.
+        Die Schleife verhindert, dass das Spiel beendet wird, nachdem es
+        gespielt wurde.
+    */
+
+    // Identifiziert, ob die Schleife wiederholt wird.
+    bool isGameLoopActive = true;
+
+    // Game-Loop, isGameLoopActive wird auf false gesetzt,
+    // wenn im Menü das Spiel beendet wird.
+    do
+    {
+        /*
+            Menü Code
+        */
+
+        /*
+            Game Code
+        */
+    }while(isGameLoopActive)
+
+    /*
+        Game Close Code
+        z.B. Auf Wiedersehen! o/
+    */
 
     return 0;
 }
@@ -28,7 +55,7 @@ int main()
 void test_dataio()
 {
     inputSolutionWord("Moin");
-    inputEnteredChar('ZM');
+    inputEnteredChar('M');
     inputEnteredChar('A');
     inputEnteredChar('O');
     inputEnteredChar('U');
