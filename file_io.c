@@ -5,3 +5,7 @@
  **/
 
 #include "file_io.h"
+
+int test()
+{
+}

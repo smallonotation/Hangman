@@ -11,12 +11,15 @@
 #include "data_io.h"
 #define MAXSTRING 100
 
+// Hab ich was falsch verstanden?
+// Wenn schon ein möchtegern setter, dann auch ein möchtegern getter.
+// Grüße - David Getter :)
 char enteredChars[MAXSTRING];
 char* solutionWord;
 
 
 /// <summary>
-/// Eine Funktion für die Eingabe der geratenen Buchstaben. 
+/// Eine Funktion für die Eingabe der geratenen Buchstaben.
 /// </summary>
 /// <param name="enteredChar">Eingegebener Buchstabe</param>
 void inputEnteredChar(char enteredChar)

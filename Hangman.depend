@@ -57,7 +57,7 @@
 
 1619416475 e:\godot\hangmannew\data_io.h
 
-1619416475 source:e:\godot\hangmannew\graphics.c
+1619418746 source:e:\godot\hangmannew\graphics.c
 	<windows.h>
 	<stdio.h>
 	"graphics.h"
@@ -93,4 +93,9 @@
 
 1619416475 source:e:\godot\hangmannew\security.c
 	"security.h"
+
+1619428070 source:e:\godot\hangmannew\file_io.c
+	"file_io.h"
+
+1619428045 e:\godot\hangmannew\file_io.h
 

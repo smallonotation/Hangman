@@ -7,4 +7,6 @@
 #ifndef FILE_IO_H
 #define FILE_IO_H
 
+// Dient dem Zweck, dass man kompilieren kann.
+int test();
 #endif // FILE_IO_H
