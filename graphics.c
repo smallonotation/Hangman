@@ -8,19 +8,19 @@
 #include <stdio.h>
 #include "graphics.h"
 
-void change_codepage()
+void changeCodepage()
 {
 	// Ändert die Codepage zu 437 für die Ascii-Zeichen des Rahmens.
 	system("chcp 437");
 }
 
-void clear_console()
+void clearConsole()
 {
 	// Löscht alle Zeichen die sich in der Konsole befinden.
 	system("cls");
 }
 
-int draw_border(int width, int height)
+int drawBorder(int width, int height)
 {
 	int i, j;
 
@@ -79,7 +79,7 @@ int draw_border(int width, int height)
 +----------+
  12345678910
 */
-void draw_hangman(/*int xPos, int yPos,*/ int errorCount)
+void drawHangman(/*int xPos, int yPos,*/ int errorCount)
 {
 	switch (errorCount)
 	{

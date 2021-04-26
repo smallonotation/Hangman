@@ -49,3 +49,48 @@
 1619116326 source:c:\users\jesse\documents\github\hangman\security.c
 	"security.h"
 
+1619416475 source:e:\godot\hangmannew\data_io.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"data_io.h"
+
+1619416475 e:\godot\hangmannew\data_io.h
+
+1619416475 source:e:\godot\hangmannew\graphics.c
+	<windows.h>
+	<stdio.h>
+	"graphics.h"
+
+1619416475 e:\godot\hangmannew\graphics.h
+
+1619416475 source:e:\godot\hangmannew\hangman.c
+	"hangman.h"
+
+1619416475 e:\godot\hangmannew\hangman.h
+	<stdbool.h>
+	"score.h"
+	"data_io.h"
+
+1619416475 e:\godot\hangmannew\score.h
+	<stdbool.h>
+	<stdio.h>
+	<time.h>
+
+1619416475 source:e:\godot\hangmannew\main.c
+	<stdlib.h>
+	"hangman.h"
+	"score.h"
+	"security.h"
+	"data_io.h"
+
+1619416475 e:\godot\hangmannew\security.h
+	<stdio.h>
+	<string.h>
+
+1619416475 source:e:\godot\hangmannew\score.c
+	"score.h"
+
+1619416475 source:e:\godot\hangmannew\security.c
+	"security.h"
+
