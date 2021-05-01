@@ -99,3 +99,55 @@
 
 1619428045 e:\godot\hangmannew\file_io.h
 
+1619118068 source:g:\repositories\ausbildung\hangman2\hangman\hangman.c
+	"hangman.h"
+
+1619118068 g:\repositories\ausbildung\hangman2\hangman\hangman.h
+	<stdbool.h>
+	"score.h"
+	"data_io.h"
+
+1619118068 g:\repositories\ausbildung\hangman2\hangman\score.h
+	<stdbool.h>
+	<stdio.h>
+	<time.h>
+
+1619880075 g:\repositories\ausbildung\hangman2\hangman\data_io.h
+
+1619118068 source:g:\repositories\ausbildung\hangman2\hangman\score.c
+	"score.h"
+
+1619118068 source:g:\repositories\ausbildung\hangman2\hangman\security.c
+	"security.h"
+
+1619118068 g:\repositories\ausbildung\hangman2\hangman\security.h
+	<stdio.h>
+	<string.h>
+
+1619506001 source:g:\repositories\ausbildung\hangman2\hangman\file_io.c
+	"file_io.h"
+
+1619506001 g:\repositories\ausbildung\hangman2\hangman\file_io.h
+
+1619506001 source:g:\repositories\ausbildung\hangman2\hangman\graphics.c
+	<windows.h>
+	<stdio.h>
+	"graphics.h"
+
+1619506001 g:\repositories\ausbildung\hangman2\hangman\graphics.h
+
+1619879998 source:g:\repositories\ausbildung\hangman2\hangman\main.c
+	<stdlib.h>
+	"hangman.h"
+	"score.h"
+	"security.h"
+	"data_io.h"
+	"graphics.h"
+
+1619880075 source:g:\repositories\ausbildung\hangman2\hangman\data_io.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	"data_io.h"
+

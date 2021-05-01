@@ -8,37 +8,75 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "data_io.h"
 #define MAXSTRING 100
 
-// Hab ich was falsch verstanden?
-// Wenn schon ein möchtegern setter, dann auch ein möchtegern getter.
-// Grüße - David Getter :)
 char enteredChars[MAXSTRING];
-char* solutionWord;
+char solutionWord[MAXSTRING];
+
+/// <summary>
+/// Eine Funktion für die Speicherung des Lösungswortes.
+/// </summary>
+/// <param name="inputSolutionWord">Eingegebenes Lösungswort</param>
+void setSolutionWord(char* inputSolutionWord)
+{
+    int i, length;
+    char c;
+    i = 0;
+    length = strlen(inputSolutionWord);
+  while (i < length) {
+    c = inputSolutionWord[i];
+    c = toupper(c);
+    solutionWord[i] = c;
+    i++;
+  }
+}
+
+
+/// <summary>
+/// Eine Funktion um das Lösungswort zu erhalten
+/// </summary>
+/// <returns>Das Lösungswort</returns>
+char* getSolutionword(){
+    return(solutionWord);
+}
+
 
 
 /// <summary>
 /// Eine Funktion für die Eingabe der geratenen Buchstaben.
 /// </summary>
 /// <param name="enteredChar">Eingegebener Buchstabe</param>
-void inputEnteredChar(char enteredChar)
+void inputEnteredChar(char inputChar)
 {
-	int length = strlen(enteredChars);
-	enteredChars[length] = enteredChar;
+    inputChar = toupper(inputChar);
+    int length = strlen(enteredChars);
+    enteredChars[length] = inputChar;
 }
 
 /// <summary>
-/// Eine Funktion für die Speicherung des Lösungswortes.
+/// Ueberprueft ob die Eingabe korrekt ist.
 /// </summary>
-/// <param name="inputSolutionWord">Eingegebenes Lösungswort</param>
-void inputSolutionWord(char* inputSolutionWord)
+/// <returns>JA bei richtiger Eingabe und NEIN bei falscher Eingabe.</returns>
+bool checkInputEnteredChar(char* inputChar)
 {
-	solutionWord = inputSolutionWord;
-	//strncpy(solutionWord, inputSolutionWord, MAXSTRING);
-	printf("Test: %s\n", solutionWord);
-}
+    char c;
+    if (strlen(inputChar) > 1){
+        printf("Bitte geben Sie nur einen Buchstaben ein! \n");
+        return(false);
+    }
+    c = inputChar[0];
+    if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z')
+    {
+         return(true);
 
+    } else{
+         printf("Bitte geben Sie nur Buchstaben ein.\n");
+         return(false);
+    }
+
+}
 /// <summary>
 /// Diese Funktion gibt das Lösungswort mit den bereits aufgedeckten Buchstaben aus.
 /// Alle nicht aufgedeckten Buchstaben werden als _ dargestellt.

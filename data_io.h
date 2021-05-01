@@ -7,10 +7,13 @@
 
 #ifndef DATA_IO_H
 #define DATA_IO_H
-void inputEnteredChar(char enteredChar);
-void inputSolutionWord(char* inputSolutionWord);
+void setSolutionWord(char* inputSolutionWord);
+char* getSolutionword();
+void inputEnteredChar(char inputChar);
 void outputDiscoveredLetters();
 void outputEnteredChars();
 void sortChar(char* letter);
 void swap(char* x, char* y);
+bool checkInputEnteredChar(char* inputChar);
+
 #endif // DATA_IO_H

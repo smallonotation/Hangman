@@ -73,8 +73,13 @@ int main()
 
 void test_dataio()
 {
-    inputSolutionWord("Moin");
-    inputEnteredChar('M');
+    char* testString = "FF";
+    setSolutionWord("moin");
+    if (checkInputEnteredChar(testString)) {
+        inputEnteredChar(testString[0]);
+    }
+    inputEnteredChar('m');
+    inputEnteredChar('N');
     inputEnteredChar('A');
     inputEnteredChar('O');
     inputEnteredChar('U');
