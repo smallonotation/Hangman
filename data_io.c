@@ -9,6 +9,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+
+// Include ist für toupper(char) - :-)
+#include <ctype.h>
+
 #include "data_io.h"
 #define MAXSTRING 100
 
@@ -67,7 +71,7 @@ bool checkInputEnteredChar(char* inputChar)
         return(false);
     }
     c = inputChar[0];
-    if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z')
+    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
     {
          return(true);
 

@@ -55,7 +55,7 @@
 	<string.h>
 	"data_io.h"
 
-1619416475 e:\godot\hangmannew\data_io.h
+1620027569 e:\godot\hangmannew\data_io.h
 
 1619429513 source:e:\godot\hangmannew\graphics.c
 	<windows.h>
@@ -77,12 +77,13 @@
 	<stdio.h>
 	<time.h>
 
-1619429467 source:e:\godot\hangmannew\main.c
+1620027569 source:e:\godot\hangmannew\main.c
 	<stdlib.h>
 	"hangman.h"
 	"score.h"
 	"security.h"
 	"data_io.h"
+	"graphics.h"
 
 1619416475 e:\godot\hangmannew\security.h
 	<stdio.h>
