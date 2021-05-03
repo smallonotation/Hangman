@@ -107,8 +107,9 @@ int main()
 
 void test_dataio()
 {
-    char* testString = "FF";
+    setPlayerName();
     setSolutionWord("moin");
+<<<<<<< Updated upstream
     if (checkInputEnteredChar(testString))
     {
         inputEnteredChar(testString[0]);
@@ -118,8 +119,17 @@ void test_dataio()
     inputEnteredChar('A');
     inputEnteredChar('O');
     inputEnteredChar('U');
+=======
+    inputEnteredChar();
+>>>>>>> Stashed changes
     outputDiscoveredLetters();
     outputEnteredChars();
+    if (isSolutionworDiscovered()){
+        printf("Wort aufgedeckt\n");
+    }
+    else{
+        printf("Wort nicht aufgedeckt\n");
+    }
 }
 
 void test_score()

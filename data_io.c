@@ -15,9 +15,10 @@
 
 #include "data_io.h"
 #define MAXSTRING 100
+#define BUFFER_SIZE 1000
 
-char enteredChars[MAXSTRING];
-char solutionWord[MAXSTRING];
+struct wordAndLetters solutionWordAndDiscoveredLetters;
+char* playerName;
 
 /// <summary>
 /// Eine Funktion für die Speicherung des Lösungswortes.
@@ -32,7 +33,7 @@ void setSolutionWord(char* inputSolutionWord)
   while (i < length) {
     c = inputSolutionWord[i];
     c = toupper(c);
-    solutionWord[i] = c;
+    solutionWordAndDiscoveredLetters.solutionWord[i] = c;
     i++;
   }
 }
@@ -43,20 +44,23 @@ void setSolutionWord(char* inputSolutionWord)
 /// </summary>
 /// <returns>Das Lösungswort</returns>
 char* getSolutionword(){
-    return(solutionWord);
+    return(solutionWordAndDiscoveredLetters.solutionWord);
 }
-
-
 
 /// <summary>
 /// Eine Funktion für die Eingabe der geratenen Buchstaben.
 /// </summary>
 /// <param name="enteredChar">Eingegebener Buchstabe</param>
-void inputEnteredChar(char inputChar)
+void inputEnteredChar()
 {
-    inputChar = toupper(inputChar);
-    int length = strlen(enteredChars);
-    enteredChars[length] = inputChar;
+    char enteredLetter[MAXSTRING] = "";
+    printf("Geben Sie einen Buchstaben ein: \n");
+    scanf("%s", &enteredLetter);
+    if (checkInputEnteredChar(enteredLetter)) {
+            enteredLetter[0] = toupper(enteredLetter[0]);
+            int length = strlen(solutionWordAndDiscoveredLetters.enteredLetters);
+            solutionWordAndDiscoveredLetters.enteredLetters[length] = enteredLetter[0];
+    }//Fehlermeldung erfolgt in checkInputEnteredChar
 }
 
 /// <summary>
@@ -68,16 +72,16 @@ bool checkInputEnteredChar(char* inputChar)
     char c;
     if (strlen(inputChar) > 1){
         printf("Bitte geben Sie nur einen Buchstaben ein! \n");
-        return(false);
+        return false;
     }
     c = inputChar[0];
     if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
     {
-         return(true);
+         return true;
 
     } else{
          printf("Bitte geben Sie nur Buchstaben ein.\n");
-         return(false);
+         return false;
     }
 
 }
@@ -88,15 +92,14 @@ bool checkInputEnteredChar(char* inputChar)
 void outputDiscoveredLetters()
 {
 	int i, j, lengthWord, lengthEnteredChars;
-
-	lengthWord = strlen(solutionWord);
-	lengthEnteredChars = strlen(enteredChars);
+	lengthWord = strlen(solutionWordAndDiscoveredLetters.solutionWord);
+	lengthEnteredChars = strlen(solutionWordAndDiscoveredLetters.enteredLetters);
 	for (i = 0; i < lengthWord; i++)
 	{
 		for (j = 0; j < lengthEnteredChars; j++)
 		{
-			if (solutionWord[i] == enteredChars[j]) {
-				printf("%c", solutionWord[i]);
+			if (solutionWordAndDiscoveredLetters.solutionWord[i] == solutionWordAndDiscoveredLetters.enteredLetters[j]) {
+				printf("%c", solutionWordAndDiscoveredLetters.solutionWord[i]);
 				break;
 			}
 			else if (j == lengthEnteredChars - 1) {
@@ -108,16 +111,57 @@ void outputDiscoveredLetters()
 }
 
 /// <summary>
+/// Überprüft ob das Lösungswort schon aufegedeckt wurde.
+/// </summary>
+/// <returns>JA wenn das Lösungswort aufgedeckt wurde und NEIN wenn es nicht aufgedeckt wurde</returns>
+bool isSolutionworDiscovered(){
+    int i, j, lengthSolutionWord, counter;
+    lengthSolutionWord = strlen(solutionWordAndDiscoveredLetters.solutionWord);
+    counter = 0;
+    for(i = 0; i < strlen(solutionWordAndDiscoveredLetters.solutionWord); i++){
+        for(j = 0; j < strlen(solutionWordAndDiscoveredLetters.enteredLetters); j++){
+            if (solutionWordAndDiscoveredLetters.solutionWord[i] == solutionWordAndDiscoveredLetters.enteredLetters[j])
+            {
+                counter++;
+            }
+        }
+    }
+    if (counter == lengthSolutionWord){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+/// <summary>
+/// Gibt den Spielernamen zurück.
+/// </summary>
+char* getPlayerName(){
+    return playerName;
+}
+
+/// <summary>
+/// Speichert den Spielernamen.
+/// </summary>
+void setPlayerName(char* name){
+    printf("Bitte geben Sie ihren Spielernamen ein: \n");
+    scanf("%s", &playerName);
+}
+
+/// <summary>
 /// Diese Funktion gibt die bisher eingegebenen Buchstaben in der alphabetischen Reihenfolge aus.
 /// </summary>
 void outputEnteredChars()
 {
 	int i, length;
-	length = strlen(enteredChars);
-	sortChar(enteredChars);
+	printf("Folgende Buchstaben haben Sie bisher eingegeben: \n");
+	length = strlen(solutionWordAndDiscoveredLetters.enteredLetters);
+	sortChar(solutionWordAndDiscoveredLetters.enteredLetters);
 	for (i = 0; i < length; i++){
-		printf("%c", enteredChars[i]);
+		printf("%c", solutionWordAndDiscoveredLetters.enteredLetters[i]);
 	}
+	printf("\n");
 }
 
 /// <summary>

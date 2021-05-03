@@ -7,13 +7,24 @@
 
 #ifndef DATA_IO_H
 #define DATA_IO_H
+#define MAXSTRING 100
+
+struct wordAndLetters {
+    char solutionWord[MAXSTRING];
+    char enteredLetters[MAXSTRING];
+};
+
+extern struct wordAndLetters solutionWordAndDiscoveredLetters;
+
 void setSolutionWord(char* inputSolutionWord);
 char* getSolutionword();
-void inputEnteredChar(char inputChar);
+void inputEnteredChar();
 void outputDiscoveredLetters();
 void outputEnteredChars();
 void sortChar(char* letter);
 void swap(char* x, char* y);
 bool checkInputEnteredChar(char* inputChar);
-
+char* getPlayerName();
+void setPlayerName();
+bool isSolutionworDiscovered();
 #endif // DATA_IO_H
