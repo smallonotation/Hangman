@@ -1,15 +1,18 @@
 /**
  *  Diese Header-Datei dient zur Deklaration der Spielfunktionalit�t.
  *
- *  @author Jesse Kroeske, Timo Thiede - 07.04.2021
+ *  @author Jesse Kroeske, Timo Thiede, Nico Nowak - 07.04.2021
  **/
 
 #ifndef HANGMAN_H
 #define HANGMAN_H
 
+#define MAXGUESSES 10
+
 #include <stdbool.h>
 #include "score.h"
 #include "data_io.h"
+#include "graphics.h"
 
 struct game {
 	bool game_won;
@@ -31,6 +34,11 @@ bool game_won();
 bool game_lost();
 
 /// <summary>
+/// Setzt den Spielstand.
+/// </summary>
+void set_game_status(bool won);
+
+/// <summary>
 /// Startet das Spiel.
 /// </summary>
 void game_start();
@@ -45,5 +53,9 @@ void game_progress();
 /// </summary>
 void game_end();
 
+/// <summary>
+/// Anzeige Score.
+/// </summary>
+void print_score();
 
 #endif // HANGMAN_H

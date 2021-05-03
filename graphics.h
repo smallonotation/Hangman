@@ -7,6 +7,9 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
+#include <windows.h>
+#include <stdio.h>
+
  /// <summary>
  ///		Struktur für die Cursorposition.
  /// </summary>
@@ -39,7 +42,7 @@ int drawBorder(int width, int height);
 ///		yPos = Y-Position
 ///		errorCount = Die Anzahl der Fehler (Wenn die Fehlerzahl über 11 steigt ist das Spiel verloren).
 /// </summary>
-void drawHangman(/*int xPos, int yPos,*/ int errorCount);
+void drawHangman(int xPos, int yPos, int errorCount);
 
 /// <summary>
 ///		Setzt den Konsolen-Cursor an die gewählte Position der Konsole.

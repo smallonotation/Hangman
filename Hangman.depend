@@ -1,52 +1,56 @@
 # depslib dependency file v1.0
-1619116326 source:c:\users\jesse\documents\github\hangman\main.c
+1620077121 source:c:\users\jesse\documents\github\hangman\main.c
 	<stdlib.h>
+	<stdio.h>
+	<inttypes.h>
 	"hangman.h"
-	"score.h"
-	"security.h"
-	"data_io.h"
 
-1619116326 c:\users\jesse\documents\github\hangman\hangman.h
+1620074611 c:\users\jesse\documents\github\hangman\hangman.h
 	<stdbool.h>
 	"score.h"
 	"data_io.h"
+	"graphics.h"
 
-1619116326 c:\users\jesse\documents\github\hangman\score.h
+1620066730 c:\users\jesse\documents\github\hangman\score.h
 	<stdbool.h>
 	<stdio.h>
 	<time.h>
 
-1619116326 c:\users\jesse\documents\github\hangman\data_io.h
-
-1619116326 c:\users\jesse\documents\github\hangman\security.h
-	<stdio.h>
-	<string.h>
-
-1619116326 source:c:\users\jesse\documents\github\hangman\data_io.c
+1620076694 c:\users\jesse\documents\github\hangman\data_io.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<stdbool.h>
+	<ctype.h>
+
+1620066730 c:\users\jesse\documents\github\hangman\security.h
+	<stdio.h>
+	<string.h>
+
+1620076728 source:c:\users\jesse\documents\github\hangman\data_io.c
 	"data_io.h"
 
-1619116326 source:c:\users\jesse\documents\github\hangman\file_io.c
+1620066939 source:c:\users\jesse\documents\github\hangman\file_io.c
 	"file_io.h"
 
-1619116326 c:\users\jesse\documents\github\hangman\file_io.h
-
-1619116326 source:c:\users\jesse\documents\github\hangman\graphics.c
-	<windows.h>
+1620066963 c:\users\jesse\documents\github\hangman\file_io.h
 	<stdio.h>
+	<assert.h>
+
+1620077392 source:c:\users\jesse\documents\github\hangman\graphics.c
 	"graphics.h"
 
-1619116326 c:\users\jesse\documents\github\hangman\graphics.h
+1620076289 c:\users\jesse\documents\github\hangman\graphics.h
+	<windows.h>
+	<stdio.h>
 
-1619116326 source:c:\users\jesse\documents\github\hangman\hangman.c
+1620077392 source:c:\users\jesse\documents\github\hangman\hangman.c
 	"hangman.h"
 
-1619116326 source:c:\users\jesse\documents\github\hangman\score.c
+1620066730 source:c:\users\jesse\documents\github\hangman\score.c
 	"score.h"
 
-1619116326 source:c:\users\jesse\documents\github\hangman\security.c
+1620066730 source:c:\users\jesse\documents\github\hangman\security.c
 	"security.h"
 
 1620028135 source:e:\godot\hangmannew\data_io.c

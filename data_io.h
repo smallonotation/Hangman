@@ -5,6 +5,14 @@
  *  @author Jesse Kroeske, Nico Nowak, Timo Thiede - 19.04.2021
  **/
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+
+// Include ist für toupper(char) - :-)
+#include <ctype.h>
+
 #ifndef DATA_IO_H
 #define DATA_IO_H
 #define MAXSTRING 100
@@ -18,7 +26,7 @@ extern struct wordAndLetters solutionWordAndDiscoveredLetters;
 
 void setSolutionWord(char* inputSolutionWord);
 char* getSolutionword();
-void inputEnteredChar();
+bool inputEnteredChar();
 void outputDiscoveredLetters();
 void outputEnteredChars();
 void sortChar(char* letter);

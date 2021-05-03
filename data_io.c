@@ -5,14 +5,6 @@
  *  @author Jesse Kroeske, Nico Nowak, Timo Thiede - 19.04.2021
  **/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
-
-// Include ist für toupper(char) - :-)
-#include <ctype.h>
-
 #include "data_io.h"
 #define MAXSTRING 100
 #define BUFFER_SIZE 1000
@@ -51,10 +43,11 @@ char* getSolutionword(){
 /// Eine Funktion für die Eingabe der geratenen Buchstaben.
 /// </summary>
 /// <param name="enteredChar">Eingegebener Buchstabe</param>
-void inputEnteredChar()
+/// <returns>True wenn richtig</returns>
+bool inputEnteredChar()
 {
     char enteredLetter[MAXSTRING] = "";
-    printf("Geben Sie einen Buchstaben ein: \n");
+    printf("Geben Sie einen Buchstaben ein: ");
     scanf("%s", &enteredLetter);
     if (checkInputEnteredChar(enteredLetter)) {
             enteredLetter[0] = toupper(enteredLetter[0]);
@@ -71,7 +64,7 @@ bool checkInputEnteredChar(char* inputChar)
 {
     char c;
     if (strlen(inputChar) > 1){
-        printf("Bitte geben Sie nur einen Buchstaben ein! \n");
+        printf("\nBitte geben Sie nur einen Buchstaben ein!");
         return false;
     }
     c = inputChar[0];
@@ -80,7 +73,7 @@ bool checkInputEnteredChar(char* inputChar)
          return true;
 
     } else{
-         printf("Bitte geben Sie nur Buchstaben ein.\n");
+         printf("\nBitte geben Sie nur Buchstaben ein.");
          return false;
     }
 
@@ -145,7 +138,7 @@ char* getPlayerName(){
 /// Speichert den Spielernamen.
 /// </summary>
 void setPlayerName(char* name){
-    printf("Bitte geben Sie ihren Spielernamen ein: \n");
+    printf("Bitte geben Sie ihren Spielernamen ein: ");
     scanf("%s", &playerName);
 }
 
@@ -155,7 +148,7 @@ void setPlayerName(char* name){
 void outputEnteredChars()
 {
 	int i, length;
-	printf("Folgende Buchstaben haben Sie bisher eingegeben: \n");
+	printf("Folgende Buchstaben haben Sie bisher eingegeben: ");
 	length = strlen(solutionWordAndDiscoveredLetters.enteredLetters);
 	sortChar(solutionWordAndDiscoveredLetters.enteredLetters);
 	for (i = 0; i < length; i++){
@@ -178,6 +171,28 @@ void sortChar(char* letter) {
 			}
 		}
 	}
+	int n = sizeof(letter) / sizeof(letter[0]);
+    n = removeDuplicates(letter, n);
+}
+
+int removeDuplicates(char arr[], int n)
+{
+    if (n==0 || n==1)
+        return n;
+
+    int temp[n];
+
+    int j = 0;
+    for (int i=0; i<n-1; i++){
+        if (arr[i] != arr[i+1])
+            temp[j++] = arr[i];
+    }
+    temp[j++] = arr[n-1];
+
+    for (int i=0; i<j; i++)
+        arr[i] = temp[i];
+
+    return j;
 }
 
 /// <summary>
