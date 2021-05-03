@@ -40,7 +40,7 @@ void game_start() {
 void game_progress() {
 	do {
 		// Ausgabe und Eingabe
-	} while (game_lost || game_won);
+	} while (game.game_lost || game.game_won);
 	game_end();
 }
 

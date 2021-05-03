@@ -5,6 +5,8 @@
  **/
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <inttypes.h>
 #include "hangman.h"
 #include "score.h"
 #include "security.h"
@@ -65,12 +67,12 @@ int main()
                     Hier kommt der Code für das Spiel rein, als wäre es eine leere main() :)
                 */
 
-                // Aktuell gleicht das Spiel dem "Console-Game-Menu-Simulator"
+                // Aktuell gleicht das Spiel dem "Console-Game-Menu-Simulator".
 
-                //game_start();
-                //test_score();
-                //test_encrypt_decrypt();
-                //test_dataio();
+                game_start();
+                test_score();
+                test_encrypt_decrypt();
+                test_dataio();
                 break;
             }
         case 'E':
@@ -146,6 +148,7 @@ void test_score()
     add_guess(false);
     add_guess(false);
 
+    // llu im Formatstring wird in dieser Version von C nicht unterstützt.
     printf("current time: %llu\n", get_stopwatchtime());
 
     printf("Delay...\n");
