@@ -17,11 +17,6 @@ void test_dataio();
 
 int main()
 {
-    //game_start();
-    //test_score();
-    //test_encrypt_decrypt();
-    test_dataio();
-
     /*
         Main-Funktion von Hangman
         Hier wird das Spiel gespielt.
@@ -31,9 +26,8 @@ int main()
 
     // Identifiziert, ob die Schleife wiederholt wird.
     bool isGameLoopActive = true;
-
-    // Test
-    int i = 0;
+    // Inputvariable für das Menü.
+    char menuInput = '0';
 
     // Game-Loop, isGameLoopActive wird auf false gesetzt,
     // wenn im Menü das Spiel beendet wird.
@@ -42,15 +36,53 @@ int main()
         /*
             Menü Code
         */
+        clearConsole();
 
-        /*
-            Game Code
-        */
+        drawBorder(68,25);
 
-        // Test
-        isGameLoopActive = false;
-        scanf("%i", &i);
-    }while(isGameLoopActive);
+        setCursorPosition(1,1); // x = 1, y = 1 (Zeile 2)
+        printf("Willkommen zu Hangman!");
+
+        setCursorPosition(1,2); // x = 1, y = 2 (Zeile 3)
+        printf("Geben Sie den Befehl ein:");
+
+        setCursorPosition(1,4);
+        printf("S: Spiel starten!");
+
+        setCursorPosition(1,5);
+        printf("E: Spiel schließen!");
+
+        setCursorPosition(2,7);
+        scanf("%c", &menuInput);
+        fflush(stdin);
+
+        switch(menuInput)
+        {
+        case 'S':
+            {
+                /*
+                    Game Code
+                    Hier kommt der Code für das Spiel rein, als wäre es eine leere main() :)
+                */
+
+                // Aktuell gleicht das Spiel dem "Console-Game-Menu-Simulator"
+
+                //game_start();
+                //test_score();
+                //test_encrypt_decrypt();
+                //test_dataio();
+                break;
+            }
+        case 'E':
+        default:
+            {
+                // Das Spiel (Schleife) wird beendet.
+                isGameLoopActive = false;
+                break;
+            }
+        }
+    }
+    while(isGameLoopActive);
 
     /*
         Game Close Code
@@ -75,7 +107,8 @@ void test_dataio()
 {
     char* testString = "FF";
     setSolutionWord("moin");
-    if (checkInputEnteredChar(testString)) {
+    if (checkInputEnteredChar(testString))
+    {
         inputEnteredChar(testString[0]);
     }
     inputEnteredChar('m');
@@ -87,7 +120,8 @@ void test_dataio()
     outputEnteredChars();
 }
 
-void test_score() {
+void test_score()
+{
     // Score Test
     int c, d;
 
@@ -132,7 +166,8 @@ void test_score() {
     printf("guesses: %i, wrong guesses: %i, time: %llu", score.guesses.correct_guesses + score.guesses.wrong_guesses, score.guesses.wrong_guesses, get_stopwatchtime());
 }
 
-void test_encrypt_decrypt() {
+void test_encrypt_decrypt()
+{
     char text[] = "Dies ist ein test\n";
     printf(text);
     encrypt(text);
