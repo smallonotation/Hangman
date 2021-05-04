@@ -134,6 +134,8 @@ void outputDiscoveredLetters()
                 printf("_");
             }
         }
+        if(lengthEnteredChars == 0)
+            printf("_");
     }
     printf("\n");
 }
@@ -201,6 +203,11 @@ void outputEnteredChars()
     printf("\n");
 }
 
+char* getSolutionWord()
+{
+    return solutionWordAndDiscoveredLetters.solutionWord;
+}
+
 /// <summary>
 /// Diese Funktion ist für die Sortierung eines char Arrays in der alphabetischen Reihenfolge.
 /// </summary>
@@ -254,4 +261,12 @@ void swap(char* x, char* y)
     char temp = *x;
     *x = *y;
     *y = temp;
+}
+
+/// <summary>
+/// Stellt den Anfangszustand der IO her.
+/// </summary>
+void reset(){
+    strcpy(solutionWordAndDiscoveredLetters.enteredLetters, "");
+    strcpy(solutionWordAndDiscoveredLetters.solutionWord, "");
 }

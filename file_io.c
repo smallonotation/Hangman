@@ -47,6 +47,46 @@ char** getLines(char* path)
 }
 
 /// <summary>
+/// Gibt die Lines einer Datei zurück.
+/// </summary>
+/// <param name="path">Pfad</param>
+/// <returns>Zufällige Zeile einer Datei</returns>
+const char* getRandomLine(char* path, double chance)
+{
+    static char line[MAXSTRINGLENTH] = "";
+    unsigned int line_count = 0;
+    double a = 0;
+    srand(time(NULL));
+
+    /* Open file */
+    FILE *file = fopen(path, "r");
+
+    if (!file)
+    {
+        return 0;
+    }
+
+    /* Lines bis end */
+    while (true)
+    {
+        if(!fgets(line, MAXSTRINGLENTH, file))
+        {
+            fclose(file);
+            file = fopen(path, "r");
+        }
+        double a = rand()/(double)RAND_MAX;
+        unsigned int random_n=(unsigned int)(BIG_MAXIMUM_NUMBER*a);
+        double chance = (double)BIG_MAXIMUM_NUMBER * chance;
+        if((double)random_n < (double)BIG_MAXIMUM_NUMBER * chance)
+        {
+            fclose(file);
+            return line;
+        }
+    }
+    return "";
+}
+
+/// <summary>
 /// Splittet einen Text.
 /// </summary>
 /// <param name="a_str">Text</param>
@@ -114,4 +154,25 @@ char*** getCSVLines(char* path)
         }
     }
     return resultFromCSV;
+}
+
+void encryptFile(char* path)
+{
+    FILE* file = fopen(path, "r");
+    FILE* fTemp = fopen("replace.tmp", "w");
+
+    if (file == NULL || fTemp == NULL)
+    {
+        return;
+    }
+
+    char line[256];
+    while (fgets(line, sizeof(line), file))
+    {
+        fputs(encrypt(line), fTemp);
+    }
+    fclose(file);
+    fclose(fTemp);
+    remove(path);
+    rename("replace.tmp", path);
 }

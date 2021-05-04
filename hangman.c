@@ -42,9 +42,12 @@ void set_game_status(bool won)
 /// </summary>
 void game_start()
 {
+    // Initialisierung
     start_stopwatch();
     gamescore.guesses.correct_guesses = gamescore.guesses.wrong_guesses = 0;
     game.game_lost = game.game_won = false;
+    // Setzen des Rätsels
+    setSolutionWord(decrypt(getRandomLine("wortliste.txt", 0.0001)));
     game_progress();
 }
 
@@ -58,8 +61,6 @@ void game_progress()
     // Ausgabe und Eingabe Name
     setCursorPosition(2,7);
     setPlayerName();
-    // Setzen des Rätsels
-    setSolutionWord("TEST");
     // Ratespiel
     do
     {
@@ -68,19 +69,21 @@ void game_progress()
         setCursorPosition(2,22);
         // Anzeige der eingegebenen Buchstaben
         outputDiscoveredLetters();
-        setCursorPosition(2,23);
+        setCursorPosition(2,24);
         printf("Richtig: %i, Falsch: %i", get_guesses().correct_guesses, get_guesses().wrong_guesses);
-        setCursorPosition(2,27);
+        setCursorPosition(2,28);
         // Anzeige der eingegebenen Buchstaben
         outputEnteredChars();
-        setCursorPosition(2,25);
+        setCursorPosition(2,26);
         // Zeile löschen.
         printf("                                         ");
+        // Überprüfung, ob das Spiel zuende gespielt wurde.
         if(ctr == MAXGUESSES || isSolutionworDiscovered()){
             break;
         }
         setCursorPosition(2,25);
         result = inputEnteredChar();
+        // Statistiken
         if(result == 1){
             add_guess(true);
         }
@@ -103,6 +106,8 @@ void game_end()
 {
     stop_stopwatch();
     print_score();
+    reset();
+    //savePlayerStats(getPlayerName(), get_stopwatchtime(), get_guesses().correct_guesses, get_guesses().wrong_guesses, getSolutionWord());
 }
 
 /// <summary>
@@ -124,4 +129,5 @@ void print_score()
     printf("Falsch:\t%i", get_guesses().wrong_guesses);
     fflush(stdin);
     getchar();
+    fflush(stdin);
 }

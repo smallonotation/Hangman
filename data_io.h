@@ -25,19 +25,37 @@ struct wordAndLetters {
 extern struct wordAndLetters solutionWordAndDiscoveredLetters;
 
 void setSolutionWord(char* inputSolutionWord);
+
 char* getSolutionword();
+
 /// <summary>
 /// Eine Funktion für die Eingabe der geratenen Buchstaben.
 /// </summary>
 /// <param name="enteredChar">Eingegebener Buchstabe</param>
 /// <returns>1 wenn richtig, 0 wenn falsch, -1 wenn der Buchstabe bereits aufgedeckt wurde.</returns>
 int inputEnteredChar();
+
 void outputDiscoveredLetters();
+
 void outputEnteredChars();
+
 void sortChar(char* letter);
+
 void swap(char* x, char* y);
+
 bool checkInputEnteredChar(char* inputChar);
+
 char* getPlayerName();
+
 void setPlayerName();
+
 bool isSolutionworDiscovered();
+
+char* getSolutionWord();
+
+/// <summary>
+/// Stellt den Anfangszustand der IO her.
+/// </summary>
+void reset();
+
 #endif // DATA_IO_H

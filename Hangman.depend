@@ -16,7 +16,7 @@
 	<stdio.h>
 	<time.h>
 
-1620143974 c:\users\jesse\documents\github\hangman\data_io.h
+1620153305 c:\users\jesse\documents\github\hangman\data_io.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -27,15 +27,19 @@
 	<stdio.h>
 	<string.h>
 
-1620146361 source:c:\users\jesse\documents\github\hangman\data_io.c
+1620153377 source:c:\users\jesse\documents\github\hangman\data_io.c
 	"data_io.h"
 
-1620066939 source:c:\users\jesse\documents\github\hangman\file_io.c
+1620155479 source:c:\users\jesse\documents\github\hangman\file_io.c
 	"file_io.h"
 
-1620143183 c:\users\jesse\documents\github\hangman\file_io.h
+1620154948 c:\users\jesse\documents\github\hangman\file_io.h
 	<stdio.h>
 	<assert.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	"security.h"
 
 1620077392 source:c:\users\jesse\documents\github\hangman\graphics.c
 	"graphics.h"
@@ -44,13 +48,13 @@
 	<windows.h>
 	<stdio.h>
 
-1620146479 source:c:\users\jesse\documents\github\hangman\hangman.c
+1620155479 source:c:\users\jesse\documents\github\hangman\hangman.c
 	"hangman.h"
 
 1620066730 source:c:\users\jesse\documents\github\hangman\score.c
 	"score.h"
 
-1620066730 source:c:\users\jesse\documents\github\hangman\security.c
+1620154559 source:c:\users\jesse\documents\github\hangman\security.c
 	"security.h"
 
 1620028135 source:e:\godot\hangmannew\data_io.c
