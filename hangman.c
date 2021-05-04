@@ -54,6 +54,7 @@ void game_start()
 void game_progress()
 {
     int ctr = 0;
+    int result = 0;
     // Ausgabe und Eingabe Name
     setCursorPosition(2,7);
     setPlayerName();
@@ -67,21 +68,28 @@ void game_progress()
         setCursorPosition(2,22);
         // Anzeige der eingegebenen Buchstaben
         outputDiscoveredLetters();
-        setCursorPosition(2,26);
+        setCursorPosition(2,23);
+        printf("Richtig: %i, Falsch: %i", get_guesses().correct_guesses, get_guesses().wrong_guesses);
+        setCursorPosition(2,27);
         // Anzeige der eingegebenen Buchstaben
         outputEnteredChars();
-        setCursorPosition(2,24);
+        setCursorPosition(2,25);
         // Zeile löschen.
         printf("                                         ");
-        setCursorPosition(2,24);
-        inputEnteredChar();
-        if(isSolutionworDiscovered())
+        if(ctr == MAXGUESSES || isSolutionworDiscovered()){
             break;
-        ctr++;
+        }
+        setCursorPosition(2,25);
+        result = inputEnteredChar();
+        if(result == 1){
+            add_guess(true);
+        }
+        else if (result == 0 || result == -1){
+            add_guess(false);
+            ctr++;
+        }
     }
-    while(ctr < MAXGUESSES);
-
-    drawHangman(2,10,ctr);
+    while(true);
 
     set_game_status(ctr < MAXGUESSES);
 
@@ -105,7 +113,7 @@ void print_score()
     // Ausgabe des Spielstandes
     drawHangman(2,10,11);
     setCursorPosition(2,10);
-    printf("Spielstand");
+    printf("%s", game_won() ? "Gewonnen" : "Verloren");
     setCursorPosition(2,11);
     printf("_______________________");
     setCursorPosition(2,12);

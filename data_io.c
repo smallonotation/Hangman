@@ -22,12 +22,13 @@ void setSolutionWord(char* inputSolutionWord)
     char c;
     i = 0;
     length = strlen(inputSolutionWord);
-  while (i < length) {
-    c = inputSolutionWord[i];
-    c = toupper(c);
-    solutionWordAndDiscoveredLetters.solutionWord[i] = c;
-    i++;
-  }
+    while (i < length)
+    {
+        c = inputSolutionWord[i];
+        c = toupper(c);
+        solutionWordAndDiscoveredLetters.solutionWord[i] = c;
+        i++;
+    }
 }
 
 
@@ -35,7 +36,8 @@ void setSolutionWord(char* inputSolutionWord)
 /// Eine Funktion um das Lösungswort zu erhalten
 /// </summary>
 /// <returns>Das Lösungswort</returns>
-char* getSolutionword(){
+char* getSolutionword()
+{
     return(solutionWordAndDiscoveredLetters.solutionWord);
 }
 
@@ -43,17 +45,45 @@ char* getSolutionword(){
 /// Eine Funktion für die Eingabe der geratenen Buchstaben.
 /// </summary>
 /// <param name="enteredChar">Eingegebener Buchstabe</param>
-/// <returns>True wenn richtig</returns>
-bool inputEnteredChar()
+/// <returns>1 wenn richtig, 0 wenn falsch, -1 wenn der Buchstabe bereits aufgedeckt wurde aber falsch, -2 wenn der Buchstabe aufgedeckt wurde aber richtig ist.</returns>
+int inputEnteredChar()
 {
     char enteredLetter[MAXSTRING] = "";
     printf("Geben Sie einen Buchstaben ein: ");
     scanf("%s", &enteredLetter);
-    if (checkInputEnteredChar(enteredLetter)) {
-            enteredLetter[0] = toupper(enteredLetter[0]);
-            int length = strlen(solutionWordAndDiscoveredLetters.enteredLetters);
-            solutionWordAndDiscoveredLetters.enteredLetters[length] = enteredLetter[0];
+    if (checkInputEnteredChar(enteredLetter))
+    {
+        enteredLetter[0] = toupper(enteredLetter[0]);
+        int length = strlen(solutionWordAndDiscoveredLetters.enteredLetters);
+        solutionWordAndDiscoveredLetters.enteredLetters[length] = enteredLetter[0];
+        int result = 0;
+        // Überprüft, ob der Buchstabe bereits einmal eingegeben wurde.
+        for(int i = 0; i < length; i++)
+        {
+            if (solutionWordAndDiscoveredLetters.enteredLetters[i] == enteredLetter[0])
+            {
+                result = -1;
+                break;
+            }
+        }
+        // Überprüft, ob der Buchstabe richtig oder falsch ist.
+        for(int i = 0; i < strlen(solutionWordAndDiscoveredLetters.solutionWord); i++)
+        {
+            if (solutionWordAndDiscoveredLetters.solutionWord[i] == enteredLetter[0])
+            {
+                if(result == -1)
+                {
+                    return -2;
+                }
+                result = 1;
+                break;
+            }
+        }
+        return result;
+
     }//Fehlermeldung erfolgt in checkInputEnteredChar
+
+    return -1;
 }
 
 /// <summary>
@@ -63,18 +93,21 @@ bool inputEnteredChar()
 bool checkInputEnteredChar(char* inputChar)
 {
     char c;
-    if (strlen(inputChar) > 1){
+    if (strlen(inputChar) > 1)
+    {
         printf("\nBitte geben Sie nur einen Buchstaben ein!");
         return false;
     }
     c = inputChar[0];
     if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
     {
-         return true;
+        return true;
 
-    } else{
-         printf("\nBitte geben Sie nur Buchstaben ein.");
-         return false;
+    }
+    else
+    {
+        printf("\nBitte geben Sie nur Buchstaben ein.");
+        return false;
     }
 
 }
@@ -84,45 +117,53 @@ bool checkInputEnteredChar(char* inputChar)
 /// </summary>
 void outputDiscoveredLetters()
 {
-	int i, j, lengthWord, lengthEnteredChars;
-	lengthWord = strlen(solutionWordAndDiscoveredLetters.solutionWord);
-	lengthEnteredChars = strlen(solutionWordAndDiscoveredLetters.enteredLetters);
-	for (i = 0; i < lengthWord; i++)
-	{
-		for (j = 0; j < lengthEnteredChars; j++)
-		{
-			if (solutionWordAndDiscoveredLetters.solutionWord[i] == solutionWordAndDiscoveredLetters.enteredLetters[j]) {
-				printf("%c", solutionWordAndDiscoveredLetters.solutionWord[i]);
-				break;
-			}
-			else if (j == lengthEnteredChars - 1) {
-				printf("_");
-			}
-		}
-	}
-	printf("\n");
+    int i, j, lengthWord, lengthEnteredChars;
+    lengthWord = strlen(solutionWordAndDiscoveredLetters.solutionWord);
+    lengthEnteredChars = strlen(solutionWordAndDiscoveredLetters.enteredLetters);
+    for (i = 0; i < lengthWord; i++)
+    {
+        for (j = 0; j < lengthEnteredChars; j++)
+        {
+            if (solutionWordAndDiscoveredLetters.solutionWord[i] == solutionWordAndDiscoveredLetters.enteredLetters[j])
+            {
+                printf("%c", solutionWordAndDiscoveredLetters.solutionWord[i]);
+                break;
+            }
+            else if (j == lengthEnteredChars - 1)
+            {
+                printf("_");
+            }
+        }
+    }
+    printf("\n");
 }
 
 /// <summary>
 /// Überprüft ob das Lösungswort schon aufegedeckt wurde.
 /// </summary>
 /// <returns>JA wenn das Lösungswort aufgedeckt wurde und NEIN wenn es nicht aufgedeckt wurde</returns>
-bool isSolutionworDiscovered(){
+bool isSolutionworDiscovered()
+{
     int i, j, lengthSolutionWord, counter;
     lengthSolutionWord = strlen(solutionWordAndDiscoveredLetters.solutionWord);
     counter = 0;
-    for(i = 0; i < strlen(solutionWordAndDiscoveredLetters.solutionWord); i++){
-        for(j = 0; j < strlen(solutionWordAndDiscoveredLetters.enteredLetters); j++){
+    sortChar(solutionWordAndDiscoveredLetters.enteredLetters);
+    for(i = 0; i < strlen(solutionWordAndDiscoveredLetters.solutionWord); i++)
+    {
+        for(j = 0; j < strlen(solutionWordAndDiscoveredLetters.enteredLetters); j++)
+        {
             if (solutionWordAndDiscoveredLetters.solutionWord[i] == solutionWordAndDiscoveredLetters.enteredLetters[j])
             {
                 counter++;
             }
         }
     }
-    if (counter == lengthSolutionWord){
+    if (counter == lengthSolutionWord)
+    {
         return true;
     }
-    else{
+    else
+    {
         return false;
     }
 }
@@ -130,14 +171,16 @@ bool isSolutionworDiscovered(){
 /// <summary>
 /// Gibt den Spielernamen zurück.
 /// </summary>
-char* getPlayerName(){
+char* getPlayerName()
+{
     return playerName;
 }
 
 /// <summary>
 /// Speichert den Spielernamen.
 /// </summary>
-void setPlayerName(char* name){
+void setPlayerName(char* name)
+{
     printf("Bitte geben Sie ihren Spielernamen ein: ");
     scanf("%s", &playerName);
 }
@@ -147,31 +190,36 @@ void setPlayerName(char* name){
 /// </summary>
 void outputEnteredChars()
 {
-	int i, length;
-	printf("Folgende Buchstaben haben Sie bisher eingegeben: ");
-	length = strlen(solutionWordAndDiscoveredLetters.enteredLetters);
-	sortChar(solutionWordAndDiscoveredLetters.enteredLetters);
-	for (i = 0; i < length; i++){
-		printf("%c", solutionWordAndDiscoveredLetters.enteredLetters[i]);
-	}
-	printf("\n");
+    int i, length;
+    printf("Folgende Buchstaben haben Sie bisher eingegeben: ");
+    length = strlen(solutionWordAndDiscoveredLetters.enteredLetters);
+    sortChar(solutionWordAndDiscoveredLetters.enteredLetters);
+    for (i = 0; i < length; i++)
+    {
+        printf("%c", solutionWordAndDiscoveredLetters.enteredLetters[i]);
+    }
+    printf("\n");
 }
 
 /// <summary>
 /// Diese Funktion ist für die Sortierung eines char Arrays in der alphabetischen Reihenfolge.
 /// </summary>
 /// <param name="letter">Buchstaben, die sortiert werden sollen.</param>
-void sortChar(char* letter) {
-	int i, j, length;
-	length = strlen(letter);
-	for (i = 0; i < length - 1; i++) {
-		for (j = i + 1; j < length; j++) {
-			if (letter[i] > letter[j]) {
-				swap(&letter[i], &letter[j]);
-			}
-		}
-	}
-	int n = sizeof(letter) / sizeof(letter[0]);
+void sortChar(char* letter)
+{
+    int i, j, length;
+    length = strlen(letter);
+    for (i = 0; i < length - 1; i++)
+    {
+        for (j = i + 1; j < length; j++)
+        {
+            if (letter[i] > letter[j])
+            {
+                swap(&letter[i], &letter[j]);
+            }
+        }
+    }
+    int n = sizeof(letter) / sizeof(letter[0]);
     n = removeDuplicates(letter, n);
 }
 
@@ -183,7 +231,8 @@ int removeDuplicates(char arr[], int n)
     int temp[n];
 
     int j = 0;
-    for (int i=0; i<n-1; i++){
+    for (int i=0; i<n-1; i++)
+    {
         if (arr[i] != arr[i+1])
             temp[j++] = arr[i];
     }
@@ -200,8 +249,9 @@ int removeDuplicates(char arr[], int n)
 /// </summary>
 /// <param name="x">Erster Buchstabe</param>
 /// <param name="y">Zweiter Buchstabe</param>
-void swap(char* x, char* y) {
-	char temp = *x;
-	*x = *y;
-	*y = temp;
+void swap(char* x, char* y)
+{
+    char temp = *x;
+    *x = *y;
+    *y = temp;
 }

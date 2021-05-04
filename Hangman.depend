@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1620077121 source:c:\users\jesse\documents\github\hangman\main.c
+1620143223 source:c:\users\jesse\documents\github\hangman\main.c
 	<stdlib.h>
 	<stdio.h>
 	<inttypes.h>
@@ -11,12 +11,12 @@
 	"data_io.h"
 	"graphics.h"
 
-1620066730 c:\users\jesse\documents\github\hangman\score.h
+1620143183 c:\users\jesse\documents\github\hangman\score.h
 	<stdbool.h>
 	<stdio.h>
 	<time.h>
 
-1620076694 c:\users\jesse\documents\github\hangman\data_io.h
+1620143974 c:\users\jesse\documents\github\hangman\data_io.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -27,13 +27,13 @@
 	<stdio.h>
 	<string.h>
 
-1620076728 source:c:\users\jesse\documents\github\hangman\data_io.c
+1620146361 source:c:\users\jesse\documents\github\hangman\data_io.c
 	"data_io.h"
 
 1620066939 source:c:\users\jesse\documents\github\hangman\file_io.c
 	"file_io.h"
 
-1620066963 c:\users\jesse\documents\github\hangman\file_io.h
+1620143183 c:\users\jesse\documents\github\hangman\file_io.h
 	<stdio.h>
 	<assert.h>
 
@@ -44,7 +44,7 @@
 	<windows.h>
 	<stdio.h>
 
-1620077392 source:c:\users\jesse\documents\github\hangman\hangman.c
+1620146479 source:c:\users\jesse\documents\github\hangman\hangman.c
 	"hangman.h"
 
 1620066730 source:c:\users\jesse\documents\github\hangman\score.c

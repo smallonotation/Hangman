@@ -20,4 +20,6 @@ char** str_split(char* a_str, const char a_delim);
 
 char*** getCSVLines(char* path);
 
+void savePlayerStats(char* name, int highscoretime, int correct_guesses, int wrong_guesses);
+
 #endif // FILE_IO_H

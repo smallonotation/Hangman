@@ -26,7 +26,12 @@ extern struct wordAndLetters solutionWordAndDiscoveredLetters;
 
 void setSolutionWord(char* inputSolutionWord);
 char* getSolutionword();
-bool inputEnteredChar();
+/// <summary>
+/// Eine Funktion für die Eingabe der geratenen Buchstaben.
+/// </summary>
+/// <param name="enteredChar">Eingegebener Buchstabe</param>
+/// <returns>1 wenn richtig, 0 wenn falsch, -1 wenn der Buchstabe bereits aufgedeckt wurde.</returns>
+int inputEnteredChar();
 void outputDiscoveredLetters();
 void outputEnteredChars();
 void sortChar(char* letter);

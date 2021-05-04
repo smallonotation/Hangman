@@ -32,7 +32,7 @@ int main()
         */
         clearConsole();
 
-        drawBorder(80,28);
+        drawBorder(80,30);
 
         setCursorPosition(2,1); // x = 1, y = 1 (Zeile 2)
         printf("Willkommen zu Hangman!");
