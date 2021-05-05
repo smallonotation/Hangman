@@ -15,7 +15,7 @@ char* playerName;
 /// <summary>
 /// Eine Funktion für die Speicherung des Lösungswortes.
 /// </summary>
-/// <param name="inputSolutionWord">Eingegebenes Lösungswort</param>
+/// <param name="inputSolutionWord">Das zu speichernde Lösungwort</param>
 void setSolutionWord(char* inputSolutionWord)
 {
     int i, length;
@@ -89,6 +89,7 @@ int inputEnteredChar()
 /// <summary>
 /// Ueberprueft ob die Eingabe korrekt ist.
 /// </summary>
+/// <param name="inputChar">Zu überprüfender Buchstabe</param>
 /// <returns>JA bei richtiger Eingabe und NEIN bei falscher Eingabe.</returns>
 bool checkInputEnteredChar(char* inputChar)
 {
@@ -171,7 +172,7 @@ bool isSolutionworDiscovered()
 }
 
 /// <summary>
-/// Gibt den Spielernamen zurück.
+/// Speichert den Spielenamen.
 /// </summary>
 char* getPlayerName()
 {
@@ -180,6 +181,7 @@ char* getPlayerName()
 
 /// <summary>
 /// Speichert den Spielernamen.
+///<param name="name">Zu speichernde Name</param>
 /// </summary>
 void setPlayerName(char* name)
 {
@@ -201,11 +203,6 @@ void outputEnteredChars()
         printf("%c", solutionWordAndDiscoveredLetters.enteredLetters[i]);
     }
     printf("\n");
-}
-
-char* getSolutionWord()
-{
-    return solutionWordAndDiscoveredLetters.solutionWord;
 }
 
 /// <summary>
