@@ -52,7 +52,8 @@ int main()
 
         switch(menuInput)
         {
-        case 'S':
+        case 's':
+        case 'S' || 's':
             {
                 /*
                     Game Code
@@ -64,6 +65,7 @@ int main()
                 game_start();
                 break;
             }
+        case 'e':
         case 'E':
         default:
             {
