@@ -47,7 +47,9 @@ void game_start()
     gamescore.guesses.correct_guesses = gamescore.guesses.wrong_guesses = 0;
     game.game_lost = game.game_won = false;
     // Setzen des Rätsels
-    setSolutionWord(decrypt(getRandomLine("wortliste.txt", 0.0001)));
+    char* randomWord = getRandomLine("wortliste.txt", (double)0.0001);
+    char* decryptedWord = decrypt(randomWord);
+    setSolutionWord(decryptedWord);
     game_progress();
 }
 
