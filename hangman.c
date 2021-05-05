@@ -83,7 +83,7 @@ void game_progress()
         if(ctr == MAXGUESSES || isSolutionworDiscovered()){
             break;
         }
-        setCursorPosition(2,25);
+        setCursorPosition(2,26);
         result = inputEnteredChar();
         // Statistiken
         if(result == 1){
